@@ -5,11 +5,11 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
-public class Controller 
+public class BankController
 {
-    @GetMapping("index.html")
+    @GetMapping("banks.html")
     public String index()
     {
-        return "index";
+        return "banks";
     }
 }
