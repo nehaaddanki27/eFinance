@@ -8,7 +8,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class FAQController
 {
     @GetMapping("FAQ.html")
-    public String index()
+    @RequestMapping("/FAQ.html")
+    public String faqController()
     {
         return "FAQ";
     }

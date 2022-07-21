@@ -8,7 +8,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class BankController
 {
     @GetMapping("banks.html")
-    public String index()
+    @RequestMapping("/banks.html")
+    public String bankController()
     {
         return "banks";
     }
