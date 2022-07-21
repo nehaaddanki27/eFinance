@@ -1,10 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
+<head th:replace="~{fragments/header :: head}"></head>
+<nav th:replace="~{fragments/navbar :: user-navbar}"></nav>
 <body>
+<div class="container container-margin">
+    <h1>Connect Bank Accounts </h1>
+    <hr>
 
+
+    <h2> Please enter the following</h2>
+    <br>
+    <hr>
+    <form action="#" class="row g-3" th:action="@{/saveBankAccount}" th:object="${bank_account}"
+          method="POST">
+
+        <div class="col-md-3">
+            <label for="firstName" class="form-label">First Name: </label>
+            <input type="text" th:field="*{firstName}" id="firstName" class="form-control"  placeholder="Enter First name:" >
+        </div>
+        <div class="col-md-3">
+            <label for="lastName" class="form-label">lastName: </label>
+            <input type="text" th:field="*{lastName}" id="lastName" class="form-control"  placeholder="Enter Last Name: " >
+        </div>
+        <div class="col-md-3">
+            <label for="bankName" class="form-label">Bank Name: </label>
+            <input type="text" th:field="*{bankName}" id="bankName" class="form-control"  placeholder="Enter Bank Name:" >
+        </div>
+        <div class="col-md-3">
+            <label for="bankAccountNumber" class="form-label">Account Number: </label>
+            <input type="text" th:field="*{bankAccountNumber}" id="bankAccountNumber" class="form-control"  placeholder="Enter Bank Account Number:" >
+        </div>
+        <div class="col-md-3">
+            <label for="routingNumber" class="form-label">Routing Number: </label>
+            <input type="text" th:field="*{routingNumber}" id="routingNumber" class="form-control"  placeholder="Enter Routing Number:" >
+        </div>
+        <div class="col-md-3">
+            <label for="accountType" class="form-label">Account Type: </label>
+            <input type="text" th:field="*{accountType}" id="accountType" class="form-control"  placeholder="Enter Account Type:" >
+        </div>
+
+        <hr>
+
+        <div class="col-12">
+            <button  type="submit" class="btn btn-outline-success btn-lg col-4" id="formButton">Add Bank Account</button>
+        </div>
+
+    </form>
+</div>
+<div th:replace="~{fragments/bootscript :: bootstrap-js}"></div>
 </body>
 </html>
