@@ -14,7 +14,9 @@
       <configuration>
         <setting name="validation-enabled" value="true" />
         <setting name="provider-name" value="Hibernate" />
-        <datasource-mapping />
+        <datasource-mapping>
+          <factory-entry name="eFinance" value="69548aca-a181-4a7a-a8a1-b00ca279434b" />
+        </datasource-mapping>
         <naming-strategy-map />
       </configuration>
     </facet>
