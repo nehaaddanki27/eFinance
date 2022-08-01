@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.example.eFinance.model.Employee;
-import com.example.eFinance.service.EmployeeService;
+import com.example.eFinance.model.Account;
+import com.example.eFinance.service.AccountService;
 
 @Controller
 public class AccountController
@@ -22,44 +22,39 @@ public class AccountController
     @Autowired
     private AccountService accountService;
 
-    // display list of accounts
     @GetMapping("/")
     public String viewHomePage(Model model) {
         return findPaginated(1, "firstName", "asc", model);
     }
 
     @GetMapping("/showNewAccountApplication")
-    public String showNewEmployeeForm(Model model)
+    public String showNewAccountForm(Model model)
     {
-        // create model attribute to bind form data
-        Applicant applicant = new Applicant();
-        model.addAttribute("applicant", applicant);
+        Account account = new Account();
+        model.addAttribute("account", account);
         return "new_account";
     }
 
-    @PostMapping("/saveEmployee")
-    public String saveEmployee(@ModelAttribute("employee") Employee employee) {
-        // save employee to database
-        employeeService.saveEmployee(employee);
+    @PostMapping("/saveAccount")
+    public String saveAccount(@ModelAttribute("account") Account account)
+    {
+        accountService.saveAccount(account);
         return "redirect:/";
     }
 
     @GetMapping("/showFormForUpdate/{id}")
-    public String showFormForUpdate(@PathVariable ( value = "id") long id, Model model) {
+    public String showFormForUpdate(@PathVariable ( value = "id") long id, Model model)
+    {
+        Account account = accountService.getAccountById(id);
 
-        // get employee from the service
-        Employee employee = employeeService.getEmployeeById(id);
-
-        // set employee as a model attribute to pre-populate the form
-        model.addAttribute("employee", employee);
-        return "update_employee";
+        model.addAttribute("account", account);
+        return "update_account";
     }
 
-    @GetMapping("/deleteEmployee/{id}")
-    public String deleteEmployee(@PathVariable (value = "id") long id) {
-
-        // call delete employee method
-        this.employeeService.deleteEmployeeById(id);
+    @GetMapping("/deleteAccount/{id}")
+    public String deleteAccount(@PathVariable (value = "id") long id)
+    {
+        this.accountService.deleteAccountById(id);
         return "redirect:/";
     }
 
@@ -68,11 +63,12 @@ public class AccountController
     public String findPaginated(@PathVariable (value = "pageNo") int pageNo,
                                 @RequestParam("sortField") String sortField,
                                 @RequestParam("sortDir") String sortDir,
-                                Model model) {
+                                Model model)
+    {
         int pageSize = 5;
 
-        Page<Employee> page = employeeService.findPaginated(pageNo, pageSize, sortField, sortDir);
-        List<Employee> listEmployees = page.getContent();
+        Page<Account> page = accountService.findPaginated(pageNo, pageSize, sortField, sortDir);
+        List<Account> listAccounts = page.getContent();
 
         model.addAttribute("currentPage", pageNo);
         model.addAttribute("totalPages", page.getTotalPages());
@@ -82,7 +78,7 @@ public class AccountController
         model.addAttribute("sortDir", sortDir);
         model.addAttribute("reverseSortDir", sortDir.equals("asc") ? "desc" : "asc");
 
-        model.addAttribute("listEmployees", listEmployees);
+        model.addAttribute("listAccounts", listAccounts);
         return "index";
     }
 }
