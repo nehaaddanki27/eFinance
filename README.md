@@ -9,6 +9,7 @@ For a successful application, further processing takes process culminating with 
 
 --------------------------------------------------M04 A03 Implement two use cases---------------------------------------------------
 Refactoring Implementations
+
     Refactored controllers to single account controller
     Resolved mapping issues from first use case
     Early implementation of input designs for data entry
@@ -17,15 +18,18 @@ Refactoring Implementations
     Corrected HTML link from index to account creation
 
 Controller classes (main folder) 
+
     ApplicationController, BankController, Controller (index), FAQController
     Controller classes will function to connect each html page to the main index page using the @getMapping method. This will allow the user to move from one page to another page in application.
 
 EFinanceApplication (java folder) - main
+
     connects EFinanceApplication to SpringBoot
 
 HTML Files (resources - templates.pages)
+
     index.html, banks.html, FAQ.html, loanAppications.html
-    index.html - This is the main page of our application. This is a page where users will be able to create accounts and login to our application. We are planning to insert a drop-down bar menu later to provide more options.
+    index.html - This is the main page of our application. This is a page where users will be able to create accounts and login to our application. We are              planning to insert a drop-down bar menu later to provide more options.
     Users can login with the following credentials
     Username: root
     Password: password
@@ -39,6 +43,7 @@ HTML Files (resources - templates.pages)
     *Currently our loan application page is not working because we are having trouble linking it to the index.html page. However, we have added a screenshot in our submission of what our page is supposed to look like*
 
 Test class - EFinanceApplicationTests
-    includes SpringBootTest function
+   
+   includes SpringBootTest function
 
 
