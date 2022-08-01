@@ -25,8 +25,8 @@ public class AccountServiceDispatch implements AccountService
     }
 
     @Override
-    public void saveEmployee(Employee employee) {
-        this.employeeRepository.save(employee);
+    public void saveAccount(Account account) {
+        this.accountRepository.save(account);
     }
 
     @Override
