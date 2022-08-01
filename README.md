@@ -7,7 +7,7 @@ ATZ Finance is a financial services company. ATZ Finance has 15 offices in the S
 
 For a successful application, further processing takes process culminating with the customer accepting the terms of the loan, signing, and the loan is disbursed to the customer’s bank account. The users of this web-based application will access it using different kinds of devices: PC, laptop, tablet, and smart phones. Through this system, customers can view, their loan accounts, make payments online from their bank accounts, make enquiries, etc. ATZ Finance personnel can view customer accounts, make updates, etc. You could think of other features that are part of this application.
 
-----------------------------------------------------------M04 A03 Implement two use cases---------------------------------------------------------
+--------------------------------------------------M04 A03 Implement two use cases---------------------------------------------------
 Refactoring Implementations
     Refactored controllers to single account controller
     Resolved mapping issues from first use case
