@@ -43,7 +43,7 @@ HTML Files (resources - templates.pages)
     *Currently our loan application page is not working because we are having trouble linking it to the index.html page. However, we have added a screenshot in our submission of what our page is supposed to look like*
 
 Test class - EFinanceApplicationTests
-   
-   includes SpringBootTest function
+        
+        includes SpringBootTest function
 
 
