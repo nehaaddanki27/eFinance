@@ -5,6 +5,83 @@
     <title>Loan Applications</title>
 </head>
 <body>
+<!--<nav>-->
+<!--    <div class="heading">-->
+<!--        <ul class='nav-links'>-->
+<!--            <li><a href="../index.html">Home</a></li>-->
+<!--            <li><a href="loanApplications.html">Loan Applications</a></li>-->
 
+<!--        </ul>-->
+<!--    </div>-->
+<!--</nav>-->
+<a href="index.html">Home </a> || <a href="loanApplications.html">Loan Applications </a>
+
+<p>Fill out this form to apply for a loan</p>
+<section>
+    <div class="container">
+        <form action="">
+            <div class="form-group">
+                <label for="type">Application type</label>
+                <select id="type">
+                    <option>Car Loan</option>
+                    <option>House Loan</option>
+                    <option>Business Loan</option>
+                    <option>School Loan</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="firstName">First Name</label>
+                <input type="text" id="firstName" name="firstName">
+            </div>
+
+            <div class="form-group">
+                <label for="lastName">Last Name</label>
+                <input type="text" id="lastName" name="lastName">
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="text" id="email" name="email">
+            </div>
+
+            <div class="form-group">
+                <label for="phoneNo">Phone Number</label>
+                <input type="text" id="phoneNo" name="phoneNo">
+            </div>
+
+            <div class="form-group">
+                <label for="dl">Driver's License #</label>
+                <input type="text" id="dl" name="dl">
+            </div>
+
+            <div class="form-group">
+                <label for="creditScore">Credit Score</label>
+                <select id="creditScore">
+                    <option>400 and below</option>
+                    <option>401-500</option>
+                    <option>501-600</option>
+                    <option>601-700</option>
+                    <option>701-800</option>
+                    <option>800 and above</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="ssn">Social Security #</label>
+                <input type="text" id="ssn" name="ssn">
+            </div>
+
+            <div class="form-group">
+                <label for="reason">Reason for Loan</label>
+                <textarea name="reason" id="reason" cols="30" rows="10"></textarea>
+            </div>
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+    <div>
+        <div id="status" class="error">Success</div>
+    </div>
+</section>
 </body>
 </html>
